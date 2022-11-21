@@ -5,11 +5,11 @@ import { generatePalette } from "./colorHelpers";
 
 class App extends Component {
   render() {
-    console.log(generatePalette(seedColors[4]));
+    // console.log(generatePalette(seedColors[4]));
     return (
       <div className="App">
         {/* Passed individually using spread operator */}
-        <Palette {...seedColors[4]} />
+        <Palette palette={generatePalette(seedColors[4])} />
       </div>
     );
   }
