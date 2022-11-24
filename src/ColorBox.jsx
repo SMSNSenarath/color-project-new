@@ -17,7 +17,7 @@ class ColorBox extends Component {
   }
 
   render() {
-    const { name, background } = this.props;
+    const { name, background, moreUrl } = this.props;
     const { copied } = this.state;
     return (
       <CopyToClipboard text={background} onCopy={this.changeCopyState}>
@@ -36,7 +36,8 @@ class ColorBox extends Component {
             </div>
             <button className="copy-button">Copy</button>
           </div>
-          <Link to="/" onClick={(e) => e.stopPropagation()}>
+          <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
+            {/* stopPropagation--->to stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed */}
             <span className="see-more">More</span>
           </Link>
         </div>
