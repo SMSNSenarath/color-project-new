@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { withStyles } from "@mui/styles";
 import MiniPalette from "./MiniPalette";
-import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
 
 const styles = {
   root: {
@@ -9,28 +8,27 @@ const styles = {
     height: "100vh",
     display: "flex",
     alignItems: "flex-start",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   container: {
     width: "50%",
     display: "flex",
     alignItems: "flex-start",
     flexDirection: "column",
-    flexWrap: "wrap",
+    flexWrap: "wrap"
   },
   nav: {
     display: "flex",
     width: "100%",
-    justifyContent: "space-between",
-    color: "white",
+    justifyContent: "space-between"
   },
   palettes: {
     boxSizing: "border-box",
     width: "100%",
     display: "grid",
     gridTemplateColumns: "repeat(3, 30%)",
-    gridGap: "5%",
-  },
+    gridGap: "5%"
+  }
 };
 
 class PaletteList extends Component {
@@ -46,10 +44,10 @@ class PaletteList extends Component {
             <h1>React Colors</h1>
           </nav>
           <div className={classes.palettes}>
-            {palettes.map((palette) => (
+            {palettes.map(palette => (
               <MiniPalette
                 {...palette}
-                handleClick={() => this.goToPalette(palette.id)} //cuz didn't bind in the constructor
+                handleClick={() => this.goToPalette(palette.id)}
               />
             ))}
           </div>
@@ -58,11 +56,4 @@ class PaletteList extends Component {
     );
   }
 }
-
 export default withStyles(styles)(PaletteList);
-
-{
-  /* <p>
-<Link to={`/palette/${palette.id}`}>{palette.paletteName}</Link>
-</p> */
-}

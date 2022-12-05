@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles } from "@mui/styles";
+import { withStyles } from "@material-ui/styles";
 
 const styles = {
   root: {
@@ -41,7 +41,7 @@ const styles = {
     display: "inline-block",
     margin: "0 auto",
     position: "relative",
-    marginBottom: "-4.5px",
+    marginBottom: "-3.5px",
   },
 };
 
@@ -54,6 +54,7 @@ function MiniPalette(props) {
       key={color.name}
     />
   ));
+
   return (
     <div className={classes.root} onClick={props.handleClick}>
       <div className={classes.colors}>{miniColorBoxes}</div>
@@ -64,4 +65,4 @@ function MiniPalette(props) {
   );
 }
 
-export default withStyles(styles)(MiniPalette); //a higher-order component which means take the minipalette and export new version of that
+export default withStyles(styles)(MiniPalette);
