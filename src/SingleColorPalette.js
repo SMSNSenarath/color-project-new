@@ -82,7 +82,6 @@ class SingleColorPalette extends Component {
     return (
       <div className={classes.Palette}>
         <Navbar handleChange={this.changeFormat} showingAllColors={false} />
-        {console.log("test")}
         <div className={classes.colors}>
           {colorBoxes}
           <div className={classes.goBack}>
